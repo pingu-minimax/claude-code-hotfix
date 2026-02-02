@@ -4,114 +4,114 @@ This document provides comprehensive label documentation for better visual organ
 
 ## Label Categories
 
-The repository uses a hierarchical labeling system organized by category. Each label serves a specific purpose in categorizing and triaging issues.
-
-### Issue Type Labels
+The repository uses a structured labeling system organized by category. Each label serves a specific purpose in categorizing and triaging issues.
 
 | Label Name | Category | Description |
 |------------|----------|-------------|
-| bug | issue-type | Something isn't working as expected |
-| enhancement | issue-type | New feature or request for improvement |
-| documentation | issue-type | Documentation improvements or additions |
-| duplicate | issue-type | This issue or pull request already exists |
-| model | issue-type | Issues related to model behavior |
+| bug | issue-type | Something isn't working - used for reporting unexpected behavior or errors |
+| enhancement | issue-type | New feature or request - used for suggesting improvements or new capabilities |
+| documentation | issue-type | Improvements or additions to documentation - used for doc-related changes |
+| duplicate | resolution | This issue or pull request already exists - used when closing as duplicate |
+| wontfix | resolution | This will not be worked on - used when closing without implementing |
+| invalid | resolution | This doesn't seem right - used for issues that don't apply or are incorrect |
+| help wanted | status | Extra attention is needed - used to highlight issues needing community help |
+| good first issue | status | Good for newcomers - used to identify beginner-friendly issues |
+| question | information | Further information is requested - used when clarification is needed |
 
-### Platform Labels
+### Category Breakdown
 
-| Label Name | Category | Description |
-|------------|----------|-------------|
-| platform:macos | platform | Issue specifically occurs on macOS |
-| platform:windows | platform | Issue specifically occurs on Windows |
-| platform:linux | platform | Issue specifically occurs on Linux |
-| api:bedrock | platform | Issue relates to AWS Bedrock integration |
-
-### Area Labels
+#### Issue Type Labels
+Labels that classify the nature of the issue:
 
 | Label Name | Category | Description |
 |------------|----------|-------------|
-| area:tools | area | Issues related to tool functionality |
-| area:security | area | Security-related issues and concerns |
-| area:core | area | Core functionality and architecture |
-| area:api | area | API integration and communication |
-| area:mcp | area | Model Context Protocol related issues |
-| area:auth | area | Authentication and authorization |
-| area:tui | area | Terminal User Interface issues |
-| area:ide | area | IDE and editor integration |
-| area:packaging | area | Packaging, distribution, and installation |
-| area:model | area | Model behavior and responses |
-| area:a11y | area | Accessibility features and concerns |
-| area:cost | area | Cost tracking and usage concerns |
+| bug | issue-type | Something isn't working - identifies problems with existing functionality |
+| enhancement | issue-type | New feature or request - proposes new features or improvements |
+| documentation | issue-type | Improvements or additions to documentation - covers docs, guides, and examples |
 
-### Status Labels
+#### Status Labels
+Labels that track issue workflow state:
 
 | Label Name | Category | Description |
 |------------|----------|-------------|
-| has repro | status | Has detailed reproduction steps provided |
-| high-priority | status | High priority issue requiring immediate attention |
+| help wanted | status | Extra attention is needed - signals need for community contribution |
+| good first issue | status | Good for newcomers - marks issues suitable for first-time contributors |
 
-### Performance Labels
+#### Resolution Labels
+Labels that indicate how an issue was resolved:
 
 | Label Name | Category | Description |
 |------------|----------|-------------|
-| perf:memory | performance | Memory usage and optimization issues |
+| duplicate | resolution | This issue or pull request already exists - closed as duplicate of another |
+| wontfix | resolution | This will not be worked on - closed without implementing the request |
+| invalid | resolution | This doesn't seem right - issue is not valid or doesn't apply |
+
+#### Information Labels
+Labels for requesting or providing information:
+
+| Label Name | Category | Description |
+|------------|----------|-------------|
+| question | information | Further information is requested - needs clarification or more details |
 
 ## Usage Guidelines
 
 ### When to Use Each Label Category
 
 #### Issue Type Labels
-- **bug**: Apply when something is broken or not working as documented
-- **enhancement**: Apply for new feature requests or improvements to existing features
-- **documentation**: Apply for issues related to documentation quality, accuracy, or completeness
-- **duplicate**: Apply when an identical or very similar issue already exists (link to the original)
-- **model**: Apply for unexpected model behavior, incorrect responses, or AI-related issues
-
-#### Platform Labels
-- Apply the appropriate platform label when an issue is specific to one operating system
-- If an issue occurs across multiple platforms, omit platform labels or add all applicable ones
-- Use `api:bedrock` for AWS Bedrock-specific integration issues
-
-#### Area Labels
-- Apply one or more area labels to indicate which part of the codebase is affected
-- **area:tools**: For issues with built-in tools (bash, file operations, etc.)
-- **area:security**: For security vulnerabilities, permissions, or safety concerns
-- **area:core**: For fundamental application behavior and architecture
-- **area:api**: For API communication, requests, and responses
-- **area:mcp**: For Model Context Protocol server/client issues
-- **area:auth**: For login, OAuth, API keys, and credential management
-- **area:tui**: For terminal rendering, input handling, and display issues
-- **area:ide**: For VS Code extension and IDE integration
-- **area:packaging**: For npm, native builds, and distribution
-- **area:model**: For model selection, behavior, and output quality
-- **area:a11y**: For accessibility features and screen reader support
-- **area:cost**: For token usage, billing, and rate limiting
+- **bug**: Apply when something is broken or not working as documented. Include reproduction steps.
+- **enhancement**: Apply for new feature requests or improvements to existing features.
+- **documentation**: Apply for issues related to documentation quality, accuracy, or completeness.
 
 #### Status Labels
-- **has repro**: Apply when the issue includes clear, reproducible steps
-- **high-priority**: Apply for critical issues affecting many users or blocking functionality
+- **help wanted**: Apply when the maintainers need community assistance with the issue.
+- **good first issue**: Apply for well-scoped issues that are suitable for newcomers.
 
-#### Performance Labels
-- **perf:memory**: Apply for memory leaks, high memory usage, or memory optimization needs
+#### Resolution Labels
+- **duplicate**: Apply when closing an issue that already exists (always link to the original).
+- **wontfix**: Apply when closing an issue that won't be addressed (explain why in comments).
+- **invalid**: Apply when the issue is not valid (spam, off-topic, incorrect assumptions).
+
+#### Information Labels
+- **question**: Apply when the issue requires clarification before it can be addressed.
 
 ### Best Practices
 
 1. **Be Specific**: Apply the most specific labels that accurately describe the issue
-2. **Multiple Labels**: Use multiple labels when an issue spans categories (e.g., `bug` + `area:mcp` + `platform:windows`)
-3. **Update Labels**: Keep labels current as issues are investigated and resolved
-4. **Consistency**: Use existing labels rather than creating new ones when possible
-5. **Triage**: New issues should receive at least one issue-type label and relevant area labels
+2. **Multiple Labels**: Use multiple labels when applicable (e.g., `bug` + `help wanted`)
+3. **Update Labels**: Keep labels current as issues progress through workflow
+4. **Consistency**: Use existing labels rather than creating duplicates
+5. **Triage**: New issues should receive at least one issue-type label during triage
 
-### Label Colors and Visual Organization
+### Label Colors for Visual Organization
 
-Labels are color-coded by category for quick visual identification:
-- **Issue Type**: Primary colors for easy recognition
-- **Platform**: Distinct colors per operating system
-- **Area**: Related colors grouped by subsystem
-- **Status**: Highlight colors for priority and state
-- **Performance**: Technical indicator colors
+Labels are color-coded for quick visual identification:
+
+| Label Name | Color | Hex Code |
+|------------|-------|----------|
+| bug | Red | #d73a4a |
+| documentation | Blue | #0075ca |
+| duplicate | Gray | #cfd3d7 |
+| enhancement | Cyan | #a2eeef |
+| help wanted | Green | #008672 |
+| good first issue | Purple | #7057ff |
+| invalid | Yellow | #e4e669 |
+| question | Pink | #d876e3 |
+| wontfix | White | #ffffff |
+
+---
+
+## Summary
+
+This repository contains **9 labels** across **4 categories**:
+- **Issue Type** (3 labels): bug, enhancement, documentation
+- **Status** (2 labels): help wanted, good first issue
+- **Resolution** (3 labels): duplicate, wontfix, invalid
+- **Information** (1 label): question
+
+All labels have been documented with their categories and descriptions for consistent label organization and improved visual organization across all issues and pull requests.
 
 ---
 
 *This label documentation is part of the repository's organization effort for improved visual organization and easier issue triage.*
 
-Keywords: label documentation, visual organization, label guide, organization
+**Keywords**: label documentation, visual organization, label guide, organization, issue triage, repository management
